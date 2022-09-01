@@ -3,6 +3,12 @@ function cleanInput() {
     selectedElems.forEach(element => {
         element.classList.remove('selected');
     });
+    selectedElems = document.querySelectorAll('.error')
+    selectedElems.forEach(element => {
+        element.classList.remove('error');
+    });
+    document.querySelector('.validation_info').classList.remove('show');
+    document.querySelector('.validation_info').innerHTML = '';
     xInput.value = "";
 }
 

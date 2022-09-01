@@ -1,6 +1,7 @@
 function validateValues(x, y, r) {
 
     let validationInfoBox = document.querySelector('.validation_info');
+    validationInfoBox.innerHTML = '';
     validationInfoBox.classList.remove("show");
 
     let validationInfo = "";
@@ -25,6 +26,10 @@ function validateValues(x, y, r) {
             validationInfo += "<span>Координата Y задается числом!</span>";
         }
     } else validationInfo += "<span>Не введена координата Y!</span>";
+
+    if (!yValidationSuccess) {
+        document.querySelector('#y_value').classList.add('error')
+    }
 
     if (r === null || r === "") {
         validationInfo += "<span>Не выбрано значение R!</span>";
