@@ -6,10 +6,10 @@ function receiveSubmit() {
 
     if (validateValues(xValue, yValue, rValue)) {
         $.ajax({
-            type: "POST",
-            url: "../src/php/index.php",
+            type: 'POST',
+            url: '../src/php/index.php',
             async: false,
-            data: { "x": xValue.trim(), "y": yValue.trim(), "r": rValue.trim() },
+            data: { 'x': xValue.trim(), 'y': yValue.trim(), 'r': rValue.trim() },
             success: function (data) {
                 let table = document.querySelector('#table > tbody');
                 table.innerHTML += data;

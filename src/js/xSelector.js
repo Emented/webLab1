@@ -7,7 +7,7 @@ elems.forEach(element => {
 function selectX() {
     if (xInput.value === this.value) {
         this.classList.remove('selected');
-        xInput.value = "";
+        xInput.value = '';
     } else {
         let selectedElems = document.querySelectorAll('.selected');
         selectedElems.forEach(element => {

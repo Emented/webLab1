@@ -9,11 +9,13 @@ function cleanInput() {
     });
     document.querySelector('.validation_info').classList.remove('show');
     document.querySelector('.validation_info').innerHTML = '';
-    xInput.value = "";
+    xInput.value = '';
+    document.querySelector('#r_value').value = '';
+    changeR();
 }
 
 function cleanTable() {
     let tBody = document.querySelector('#table > tbody');
     console.log(tBody)
-    tBody.innerHTML = "";
+    tBody.innerHTML = '';
 }
