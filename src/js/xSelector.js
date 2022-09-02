@@ -1,4 +1,3 @@
-"use strict";
 const elems = document.querySelectorAll('.btn_group button');
 const xInput = document.querySelector('#x_value');
 elems.forEach(element => {

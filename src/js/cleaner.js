@@ -16,6 +16,6 @@ function cleanInput() {
 
 function cleanTable() {
     let tBody = document.querySelector('#table > tbody');
-    console.log(tBody)
     tBody.innerHTML = '';
+    storage.clear();
 }

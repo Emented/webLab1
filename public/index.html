@@ -9,7 +9,8 @@
   <script src="../src/js/updater.js"></script>
   <script src="../src/js/validator.js"></script>
   <script src="../src/js/yInput.js"></script>
-  <script src="../src/js/rChanger.js"></script>
+  <script src="../src/js/plotUpdater.js"></script>
+  <script src="../src/js/cleaner.js"></script>
   <style>
 
     body {
@@ -43,6 +44,10 @@
 
     .horizontal-separator {
       height: 30px;
+    }
+
+    .plot {
+      padding: 0 20px 20px 20px;
     }
 
     .plot svg {
@@ -191,9 +196,9 @@
 <body>
   <table class="wrapper">
     <colgroup>
-      <col span="1" style="width: 24%;">
-      <col span="1" style="width: 28%;">
-      <col span="1" style="width: 48%;">
+      <col span="1" style="width: 27%;">
+      <col span="1" style="width: 33%;">
+      <col span="1" style="width: 40%;">
     </colgroup>
     <tbody>
       <tr>
@@ -270,7 +275,7 @@
               <tr class="y_value">
                 <td>
                   <label for="y_value">Choose Y:</label>
-                  <input type="text" id="y_value" name="y_value" oninput="checkInput()">
+                  <input type="text" id="y_value" name="y_value" onchange="checkInput()" oninput="checkInput()">
                 </td>
               </tr>
 
@@ -330,5 +335,5 @@
   
 </body>
 <script src="../src/js/xSelector.js"></script>
-<script src="../src/js/cleaner.js"></script>
+<script src="../src/js/tableUpdater.js"></script>
 </html>

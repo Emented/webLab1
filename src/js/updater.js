@@ -11,8 +11,8 @@ function receiveSubmit() {
             async: false,
             data: { 'x': xValue.trim(), 'y': yValue.trim(), 'r': rValue.trim() },
             success: function (data) {
-                let table = document.querySelector('#table > tbody');
-                table.innerHTML += data;
+                addRow(data);
+                // drawPoint(xValue, yValue, rValue);
             },
             error: function (data) {
                 alert(data);

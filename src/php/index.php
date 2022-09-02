@@ -1,4 +1,8 @@
 <?php
+class Validator {
+
+}
+
 date_default_timezone_set('Europe/Moscow');
 
 function check_hit($x, $y, $r)
