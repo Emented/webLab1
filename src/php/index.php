@@ -1,81 +1,70 @@
 <?php
-class Validator
-{
-    function check_data_type($x, $y, $r)
-    {
-        if (!is_numeric($x) || !is_numeric($y) || !is_numeric($r)) {
-            http_response_code(404);
-            exit("Some values are not numeric!");
-        }
-    }
+include 'checker.php';
 
-    function check_aceptability($x, $y, $r)
-    {
-        if (!isset($x) || !isset($y) || !isset($r)) {
-            http_response_code(404);
-            exit("Some values are not set in the request!");
-        }
-    }
-
-    public function check_values($x, $y, $r)
-    {
-        $this->check_aceptability($x, $y, $r);
-        $this->check_data_type($x, $y, $r);
-    }
-}
-
-class HitChecker
-{
-    public function check($x, $y, $r)
-    {
-        $x_num = intval($x);
-        $y_num = floatval($y);
-        $r_num = intval($r);
-        $first_quarter_hit = false;
-        $third_quarter_hit = false;
-        $fourth_quarter_hit = false;
-
-        if ($x_num >= 0 && $x_num <= $r_num / 2 && $y_num >= 0 && $y_num <= $r_num) {
-            $first_quarter_hit = true;
-        }
-
-        if ($x_num <= 0 && $y_num <= 0 && $x_num * $x_num + $y_num * $y_num <= $r_num * $r_num) {
-            $third_quarter_hit = true;
-        }
-
-        if ($x_num >= 0 && $y_num <= 0 && $y_num >= $x_num / 2 - $r_num) {
-            $fourth_quarter_hit = true;
-        }
-
-        return $first_quarter_hit || $third_quarter_hit || $fourth_quarter_hit;
-    }
-}
-
-date_default_timezone_set('Europe/Moscow');
+date_default_timezone_set('UTC');
 
 $start = microtime(true);
 
-$current_time = date("H:i:s");
+$response = [];
 
-$x = $_POST['x'];
-$y = $_POST['y'];
-$r = $_POST['r'];
+session_start();
 
-$validator = new Validator();
-$hit_checker = new HitChecker();
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if(!isset($_SESSION['table'])) {
+        $_SESSION['table'] = '';
+    }
 
-$validator->check_values($x, $y, $r);
+    $response = $_SESSION['table'];
 
-$checked_hit = $hit_checker->check($x, $y, $r) ? "TRUE" : "FALSE";
+    exit($response);
+}
 
-$compution_time = number_format(microtime(true) - $start, 8, ".", "") * 1000000;
+if (!isset($x) || !isset($y) || !isset($r) || !isset($utc)) {
+    $x = $_POST['x'];
+    $y = $_POST['y'];
+    $r = $_POST['r'];
+    $utc = $_POST['utc'];
+    if (!is_numeric($x) || !is_numeric($y) || !is_numeric($r) || !is_numeric($utc)) {
+                $data["message"] = "Only number must be passed";
+                http_response_code(400);
+    } else {
+        $current_time = date("H:i:s", time() - $utc * 60);
+        $hit_checker = new HitChecker();
+        $checked_hit = $hit_checker->check($x, $y, $r) ? "TRUE" : "FALSE";
 
-exit("
-        <tr>
-            <th><time>$current_time</time></th>
-            <th><time>$compution_time</time></th>
-            <th>$x</th>
-            <th>$y</th>
-            <th>$r</th>
-            <th>$checked_hit</th>
-        </tr>");
+        $compution_time = number_format((microtime(true) - $start) * 1000000, 2, ".", "");
+
+        $data["x"] = $x;
+        $data["y"] = $y;
+        $data["r"] = $r;
+        $data["current_time"] = $current_time;
+        $data["finish_time"] = $compution_time;
+        $data["checked_hit"] = $checked_hit;
+
+        $row = "
+            <tr>
+                <th><time>$current_time</time></th>
+                <th><time>$compution_time</time></th>
+                <th>$x</th>
+                <th>$y</th>
+                <th>$r</th>
+                <th>$checked_hit</th>
+            </tr>";
+
+        if(!isset($_SESSION['table'])) {
+            $_SESSION['table'] = '';
+        }
+
+        $response = $_SESSION['table'].$row;
+
+        $_SESSION['table'] = $response;
+
+        http_response_code(200);
+    }
+} else {
+    $data["message"] = "Some parameters are missing: x, y, r expected.";
+    http_response_code(400);
+}
+echo $response;
+?>
+

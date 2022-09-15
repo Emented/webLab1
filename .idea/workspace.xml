@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e141b865-7855-4edb-abfb-b47290fbbde0" name="Changes" comment="Implement localStorage" />
+    <list default="true" id="e141b865-7855-4edb-abfb-b47290fbbde0" name="Changes" comment="Implement localStorage">
+      <change afterPath="$PROJECT_DIR$/src/js/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/php/checker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_08_2022,_14_03_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_08_2022__14_03__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/plotUpdater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/plotUpdater.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/tableUpdater.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/updater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/updater.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/yInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/yInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +66,10 @@
       <workItem from="1661943907387" duration="39416000" />
       <workItem from="1662152662186" duration="118000" />
       <workItem from="1662213728294" duration="284000" />
+      <workItem from="1662483175038" duration="2688000" />
+      <workItem from="1663097487360" duration="4000" />
+      <workItem from="1663183337974" duration="680000" />
+      <workItem from="1663252080485" duration="6536000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1661944031653</created>

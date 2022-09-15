@@ -29,13 +29,3 @@ function changeR() {
         })
     }
 }
-
-function drawPoint(x, y, r) {
-    let plot = document.querySelector('svg');
-    let point = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-    const size = 100 / r;
-    point.setAttribute('cx', (150 + x * size).toString());
-    point.setAttribute('cy', (150 - y * size).toString());
-    point.setAttribute('r', '4');
-    plot.appendChild(point);
-}

@@ -11,12 +11,14 @@
   <script src="../src/js/yInput.js"></script>
   <script src="../src/js/plotUpdater.js"></script>
   <script src="../src/js/cleaner.js"></script>
+  <script src="../src/js/init.js"></script>
   <style>
 
     body {
       margin: 0;
       padding: 0;
       background-color: #dedede;
+      height: 100%;
     }
 
     .wrapper {
@@ -131,6 +133,7 @@
       border: 2px solid;
       border-collapse: collapse;
       background-color: white;
+
     }
 
 
@@ -193,7 +196,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="init()">
   <table class="wrapper">
     <colgroup>
       <col span="1" style="width: 27%;">
