@@ -19,6 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit($response);
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    $_SESSION['table'] = null;
+
+    $message = "Table cleaned successfully!";
+    $data["message"] = $message;
+
+    exit($message);
+}
+
 if (!isset($x) || !isset($y) || !isset($r) || !isset($utc)) {
     $x = $_POST['x'];
     $y = $_POST['y'];

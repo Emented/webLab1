@@ -7,8 +7,8 @@ function getTable() {
         type: "GET",
         url: "../src/php/index.php",
         async: false,
-        success: function(data) {
-            document.querySelector('#table > tbody').innerHTML = data;
+        success: function(response) {
+            document.querySelector('#table > tbody').innerHTML = response;
         },
         error: function(data) {
             alert(data);

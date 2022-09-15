@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e141b865-7855-4edb-abfb-b47290fbbde0" name="Changes" comment="Implement localStorage">
-      <change afterPath="$PROJECT_DIR$/src/js/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/php/checker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_08_2022,_14_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_08_2022__14_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e141b865-7855-4edb-abfb-b47290fbbde0" name="Changes" comment="Implement server side table store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/plotUpdater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/plotUpdater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/tableUpdater.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/cleaner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/cleaner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/updater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/updater.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/yInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/yInput.js" afterDir="false" />
@@ -69,7 +65,7 @@
       <workItem from="1662483175038" duration="2688000" />
       <workItem from="1663097487360" duration="4000" />
       <workItem from="1663183337974" duration="680000" />
-      <workItem from="1663252080485" duration="6536000" />
+      <workItem from="1663252080485" duration="7506000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1661944031653</created>
@@ -113,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662152741304</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implement server side table store">
+      <created>1663259082043</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663259082043</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +152,7 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Fix cleaner.js" />
     <MESSAGE value="Implement localStorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement localStorage" />
+    <MESSAGE value="Implement server side table store" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement server side table store" />
   </component>
 </project>

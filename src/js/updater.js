@@ -13,7 +13,7 @@ function receiveSubmit() {
             url: '../src/php/index.php',
             async: false,
             data: { 'x': parseInt(xValue.trim()),
-                'y': parseFloat(yValue.trim().replace(',', '.')),
+                'y': parseFloat(yValue.trim()),
                 'r': parseInt(rValue.trim()),
                 'utc': offset },
             success: function (response) {

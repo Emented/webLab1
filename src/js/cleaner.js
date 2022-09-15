@@ -17,5 +17,15 @@ function cleanInput() {
 function cleanTable() {
     let tBody = document.querySelector('#table > tbody');
     tBody.innerHTML = '';
-    storage.clear();
+    $.ajax({
+        type: "DELETE",
+        url: "../src/php/index.php",
+        async: false,
+        success: function(data) {
+            alert(data);
+        },
+        error: function(data) {
+            alert(data);
+        }
+    });
 }

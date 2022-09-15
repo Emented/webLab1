@@ -17,7 +17,7 @@ function validateValues(x, y, r) {
     }
 
     if (!(y.trim() === '')) {
-        let parsedY = Number(y.replace(',', '.'));
+        let parsedY = Number(y);
         if (!isNaN(parsedY)) {
             if ((parsedY > -3) && (parsedY < 5)) {
                 yValidationSuccess = true;
