@@ -23,32 +23,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $_SESSION['table'] = null;
 
     $message = "Table cleaned successfully!";
-    $data["message"] = $message;
 
     exit($message);
 }
 
-if (!isset($x) || !isset($y) || !isset($r) || !isset($utc)) {
+if (isset($_POST['x']) && isset($_POST['y']) && isset($_POST['r']) && isset($_POST['utc'])) {
     $x = $_POST['x'];
     $y = $_POST['y'];
     $r = $_POST['r'];
     $utc = $_POST['utc'];
     if (!is_numeric($x) || !is_numeric($y) || !is_numeric($r) || !is_numeric($utc)) {
-                $data["message"] = "Only number must be passed";
                 http_response_code(400);
+                exit("Only number must be passed");
     } else {
         $current_time = date("H:i:s", time() - $utc * 60);
         $hit_checker = new HitChecker();
         $checked_hit = $hit_checker->check($x, $y, $r) ? "TRUE" : "FALSE";
 
         $compution_time = number_format((microtime(true) - $start) * 1000000, 2, ".", "");
-
-        $data["x"] = $x;
-        $data["y"] = $y;
-        $data["r"] = $r;
-        $data["current_time"] = $current_time;
-        $data["finish_time"] = $compution_time;
-        $data["checked_hit"] = $checked_hit;
 
         $row = "
             <tr>
@@ -71,8 +63,8 @@ if (!isset($x) || !isset($y) || !isset($r) || !isset($utc)) {
         http_response_code(200);
     }
 } else {
-    $data["message"] = "Some parameters are missing: x, y, r expected.";
     http_response_code(400);
+    exit("Some parameters are missing: x, y, r, utc expected.");
 }
 echo $response;
 ?>

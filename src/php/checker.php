@@ -1,9 +1,6 @@
 <?php
 class HitChecker {
-    public function check($x, $y, $r) {
-        $x_num = $x;
-        $y_num = $y;
-        $r_num = $r;
+    public function check($x_num, $y_num, $r_num) {
         $first_quarter_hit = false;
         $third_quarter_hit = false;
         $fourth_quarter_hit = false;
